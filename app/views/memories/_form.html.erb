@@ -1,0 +1,49 @@
+<div class="group">
+  <%= f.label :Memory, 'TriMemory', :class => :label %>
+  <% @memory_textboxes.each_with_index do |@memorytext, i| %>
+    <%= text_field "memorytext[]", :content, {:class => "text_field", :autocomplete => "off", :index => i} %>
+    <%#= text_area "memory[]", :content, {:class => "text_area", :size => "55x1", :autocomplete => "off", :index => i} %>
+    <!-- 補完候補を表示するエリア -->
+    <div id="suggest_<%= i %>"></div>
+  <% end %>
+  <span class="description">
+    複数入力すると、それぞれが相互にリンクされます。<br />
+  </span>
+</div>
+
+<div class="group navform">
+  <button class="button" type="submit">
+    <%= image_tag("web-app-theme/tick.png", :alt => "#{t("web-app-theme.save", :default => "Save")}") %> <%= t("web-app-theme.save", :default => "Save") %>
+  </button>
+  <%= link_to "#{image_tag("web-app-theme/cross.png", :alt => "#{t("web-app-theme.cancel", :default => "Cancel")}")} #{t("web-app-theme.cancel", :default => "Cancel")}", memories_path, :class => "button" %>
+  <div class="clear"></div>
+</div>
+
+<script type="text/javascript" language="javascript">
+  <!--
+  // 補完候補の配列作成
+  var memories = [
+  <% @memories_index.each do |memory| -%>
+    "<%= memory.content %>",
+  <% end -%>
+    "#thisisdummyforlist#"
+  ];
+
+  // wondowのonloadイベントでSuggestを生成
+  //var start1 = function(){new Suggest.Local("memory_0_content", "suggest_0", memories);};
+  var start1 = function(){new Suggest.LocalMulti("memorytext_0_content", "suggest_0", memories, {dispAllKey: true, highlight: true, delim: '\n'});};
+  //var start2 = function(){new Suggest.Local("memory_1_content", "suggest_1", memories);};
+  var start2 = function(){new Suggest.LocalMulti("memorytext_1_content", "suggest_1", memories, {dispAllKey: true, highlight: true, delim: '\n'});};
+  //var start3 = function(){new Suggest.Local("memory_2_content", "suggest_2", memories);};
+  var start3 = function(){new Suggest.LocalMulti("memorytext_2_content", "suggest_2", memories, {dispAllKey: true, highlight: true, delim: '\n'});};
+  window.addEventListener ?
+  window.addEventListener('load', start1, false) :
+  window.attachEvent('onload', start1);
+  window.addEventListener ?
+  window.addEventListener('load', start2, false) :
+  window.attachEvent('onload', start2);
+  window.addEventListener ?
+  window.addEventListener('load', start3, false) :
+  window.attachEvent('onload', start3);
+  //-->
+</script>

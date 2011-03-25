@@ -1,0 +1,143 @@
+/* Override here any style definide by web-app-theme */
+
+/* MEMORIES LIST */
+#memories_list {
+  margin: 0px;
+  padding: 0px;
+}
+
+#memories_list li {
+  list-style: none;
+  padding: 5px 0px;
+  margin: 0px;
+  background-color: #fff;
+  border-bottom: 1px dashed #D2DADA;
+}
+
+#memories_list li.first {
+  border-top: 1px dashed #D2DADA;
+}
+
+#memories_list li:hover {
+  background-color: #F7F7F7;
+}
+
+#memories_list li div.memory_container {
+}
+
+#memories_list li div.memory_container div.date{
+  padding-top: 10px;
+  color: #9C9C9C;
+  font-size: 90%;
+  text-align: right;
+}
+
+#memories_list li div.memory_container div.title{
+  padding: 5px;
+  font-size: 120%;
+  font-weight: bold;
+  background-color: #CFCFCF;
+}
+
+#memories_list li div.memory_container div.content{
+  margin: 0px;
+  padding: 0px;
+  font-size: 100%;
+  background-color: #FFF;
+}
+
+/* SUGGEST MEMORY FORM */
+#suggest_0 {
+  position: absolute;
+  background-color: #FFFFFF;
+  border: 1px solid #CCCCFF;
+  font-size: 100%;
+  width: 628px;
+}
+
+#suggest_0 div {
+  display: block;
+  width: 630px;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+#suggest_0 div.select{ /* キー上下で選択した場合のスタイル */
+  color: #FFFFFF;
+  background-color: #3366FF;
+}
+
+#suggest_0 div.over{ /* マウスオーバ時のスタイル */
+  background-color: #99CCFF;
+}
+
+#suggest_1 {
+  position: absolute;
+  background-color: #FFFFFF;
+  border: 1px solid #CCCCFF;
+  font-size: 100%;
+  width: 628px;
+}
+
+#suggest_1 div {
+  display: block;
+  width: 630px;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+#suggest_1 div.select{ /* キー上下で選択した場合のスタイル */
+  color: #FFFFFF;
+  background-color: #3366FF;
+}
+
+#suggest_1 div.over{ /* マウスオーバ時のスタイル */
+  background-color: #99CCFF;
+}
+
+#suggest_2 {
+  position: absolute;
+  background-color: #FFFFFF;
+  border: 1px solid #CCCCFF;
+  font-size: 100%;
+  width: 628px;
+}
+
+#suggest_2 div {
+  display: block;
+  width: 630px;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+#suggest_2 div.select{ /* キー上下で選択した場合のスタイル */
+  color: #FFFFFF;
+  background-color: #3366FF;
+}
+
+#suggest_2 div.over{ /* マウスオーバ時のスタイル */
+  background-color: #99CCFF;
+}
+
+/* USER'S CARD */
+#card td.title {
+  text-align: right;
+}
+
+#card td.status {
+  padding-left: 5px;
+  text-align: left;
+}
+
+/* MEMORY FORM */
+.form label.label, .form input.text_field, .form textarea.text_area {
+  font-size: 1.2em;
+  padding: 3px 0;
+  margin: 3px 0;
+}
+
+.form textarea.text_area {
+  font-size:1em;
+  margin:1px 0;
+  padding: 0;
+}

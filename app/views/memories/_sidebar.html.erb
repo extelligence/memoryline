@@ -1,0 +1,32 @@
+<div class="block">
+  <h3>User's Card</h3>
+  <div class="content">
+    <table id="card">
+      <tr>
+        <td class="title">ID:</td>
+        <td class="status"><strong><%= current_user.login %></strong></td>
+      </tr>
+      <tr>
+        <td class="title">MEMORY:</td>
+        <td class="status">
+          <strong><%= Memory.count(:conditions => ["user_id = ?", current_user.id]) %></strong>&nbsp;
+          /&nbsp;<strong><%= MemoryEdge.count(:conditions => ["user_id = ?", current_user.id]) %></strong>
+        </td>
+      </tr>
+    </table>
+  </div>
+</div>
+
+<div class="block">
+  <h3>User's Profile</h3>
+  <div class="content">
+    <p>Today:&nbsp;<strong>&nbsp;</strong>&nbsp;&nbsp;&nbsp;AVG:&nbsp;<strong>&nbsp;</strong></p>
+  </div>
+</div>
+
+<div class="block">
+  <h3>Links</h3>
+  <ul class="navigation">
+    <li><a href="#">&nbsp;</a></li>
+  </ul>
+</div>
